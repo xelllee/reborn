@@ -2,7 +2,7 @@ package com.xelllee.code.leetcode;
 
 import java.util.Arrays;
 
-public class SimpleTest {
+public class MedianofTwoSortedArrays {
 
 
     public static void main(String[] args) {
