@@ -1,8 +1,9 @@
 package com.xelllee.code.leetcode;
 
-public class SimpleTest {
-
-
+/**
+ * Created by xiao on 9/2/15.
+ */
+public class RemoveDuplicatesfromSortedArray2 {
 
 
 
