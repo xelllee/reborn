@@ -29,6 +29,8 @@ public class TwoSum {
 
     public static String twoSumHash(int[] arr, int target) {
 
+        long startTime = System.currentTimeMillis();
+
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int num, diff;
         int[] res = new int [2];
