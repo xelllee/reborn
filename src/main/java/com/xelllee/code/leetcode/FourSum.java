@@ -43,6 +43,7 @@ public class FourSum {
     }
 
 
+
     // slow
     private static List<List<Integer>> makeItRight2(int[] nums, int target) {
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
