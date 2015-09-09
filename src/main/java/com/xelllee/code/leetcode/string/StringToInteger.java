@@ -28,14 +28,75 @@ If the correct value is out of the range of representable values, the maximum in
     public static void main(String[] args) {
 
 
+//        System.out.println(atoi("23a"));
+//        System.out.println(makeItRight("23a"));
+        System.out.println(makeItRight("-2147483647"));
+
+
     }
 
 
-    public static int makeItRight(int[] nums) {
+    public static int makeItRight(String str) {
 
 
-        return 0;
+        if (str.isEmpty()) return 0;
 
+        int i = 0;
+
+        while (str.charAt(i) == ' ') i++;
+        int sign = -1;
+        int num = 0;
+
+        char f = str.charAt(i);
+
+        if (f == '-') {
+            sign = -1;
+            i++;
+        } else if (f == '+') {
+            sign = 1;
+            i++;
+        } else if (Character.isDigit(f)) {
+            num = Character.getNumericValue(f);
+            sign = 1;
+            i++;
+        }
+
+
+        while (i < str.length() && Character.isDigit(str.charAt(i))) {
+            if (num > Integer.MAX_VALUE / 10 || num == Integer.MAX_VALUE / 10 && Character.getNumericValue(str.charAt(i)) >= 8) {
+                return (sign < 0) ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+            num = num * 10 + Character.getNumericValue(str.charAt(i));
+            i++;
+        }
+
+
+        return sign * num;
+
+    }
+
+    private static final int maxDiv10 = Integer.MAX_VALUE / 10;
+
+    public static int atoi(String str) {
+        int i = 0, n = str.length();
+        while (i < n && Character.isWhitespace(str.charAt(i))) i++;
+        int sign = 1;
+        if (i < n && str.charAt(i) == '+') {
+            i++;
+        } else if (i < n && str.charAt(i) == '-') {
+            sign = -1;
+            i++;
+        }
+        int num = 0;
+        while (i < n && Character.isDigit(str.charAt(i))) {
+            int digit = Character.getNumericValue(str.charAt(i));
+            if (num > maxDiv10 || num == maxDiv10 && digit >= 8) {
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+            num = num * 10 + digit;
+            i++;
+        }
+        return sign * num;
     }
 
 }
