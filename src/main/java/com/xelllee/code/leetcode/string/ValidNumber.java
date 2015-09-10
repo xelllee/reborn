@@ -22,6 +22,8 @@ Note: It is intended for the problem statement to be ambiguous. You should gathe
 
     public static boolean makeItRight(String s) {
 
+
+        //TODO:
         int i = 0, n = s.length();
         while (i < n && Character.isWhitespace(s.charAt(i))) i++;
         if (i < n && (s.charAt(i) == '+' || s.charAt(i) == '-')) i++;
