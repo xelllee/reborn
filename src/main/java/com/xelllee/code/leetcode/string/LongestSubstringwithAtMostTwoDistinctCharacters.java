@@ -1,6 +1,5 @@
 package com.xelllee.code.leetcode.string;
 
-import java.util.Arrays;
 
 public class LongestSubstringwithAtMostTwoDistinctCharacters {
 
@@ -12,6 +11,8 @@ public class LongestSubstringwithAtMostTwoDistinctCharacters {
     T is "ece" which its length is 3.
 */
 
+
+    //TODO later
     public static void main(String[] args) {
 
 
@@ -22,6 +23,7 @@ public class LongestSubstringwithAtMostTwoDistinctCharacters {
 
 
 //    public static int makeItRight(String s) {
+
 //
 //        int max = 0, q = 0, p = 0, i;
 //        char a = '\000', b = '\000';
