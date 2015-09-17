@@ -6,17 +6,21 @@ public class SimpleTest {
     public static void main(String[] args) {
 
 
-
     }
 
+    public static class ListNode {
+        int val;
+        ListNode next;
 
-    public static int makeItRight(int[] nums) {
-
-
-
-
-        return 0;
-
+        ListNode(int x) {
+            val = x;
+        }
     }
 
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+
+        return null;
+
+    }
 }
