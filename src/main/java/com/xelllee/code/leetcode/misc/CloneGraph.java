@@ -2,6 +2,7 @@ package com.xelllee.code.leetcode.misc;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class CloneGraph {
@@ -33,7 +34,7 @@ public class CloneGraph {
     *
     * */
 
-    class UndirectedGraphNode {
+    static class UndirectedGraphNode {
         int label;
         List<UndirectedGraphNode> neighbors;
 
@@ -43,20 +44,39 @@ public class CloneGraph {
         }
     }
 
-    ;
 
     public static void main(String[] args) {
 
         int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
+        UndirectedGraphNode node = new UndirectedGraphNode(0);
+        node.neighbors.add(node);
+        node.neighbors.add(node);
+
+
+        UndirectedGraphNode clone = cloneGraph(node);
 
     }
 
 
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+    public static UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) return null;
+        HashMap<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>();
+        return cloneNode(node, map);
+    }
 
 
-        return null;
+    public static UndirectedGraphNode cloneNode(UndirectedGraphNode node, HashMap<Integer, UndirectedGraphNode> map) {
+
+        if (!map.containsKey(node.label)) {
+            UndirectedGraphNode clone = new UndirectedGraphNode(node.label);
+            map.put(clone.label, clone);
+            for (UndirectedGraphNode neighbor : node.neighbors) {
+                clone.neighbors.add(cloneNode(neighbor, map));
+            }
+
+            return clone;
+        } else return map.get(node.label);
     }
 
 
