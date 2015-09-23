@@ -1,23 +1,25 @@
 package com.xelllee.code.leetcode.dp;
 
 
-import java.util.HashMap;
-
 public class UniquePath {
 
 /*
 
-A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+Follow up for "Unique Paths":
 
-The robot can only move either down or right at any point in time.
-The robot is trying to reach the bottom-right corner of the grid
-(marked 'Finish' in the diagram below).
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
 
-How many possible unique paths are there?
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
 
+For example,
+There is one obstacle in the middle of a 3x3 grid as illustrated below.
 
-http://leetcode.com/wp-content/uploads/2014/12/robot_maze.png
-Above is a 3 x 7 grid. How many possible unique paths are there?
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+The total number of unique paths is 2.
 
 Note: m and n will be at most 100.
 
@@ -32,26 +34,18 @@ Note: m and n will be at most 100.
         System.out.println(arr[1][1]);
 
         System.out.println(uniquePaths(21, 14));
-        System.out.println(uniquePaths2(21, 14));
-        System.out.println(uniquePaths3(21, 14));
     }
 
-
-    public static int uniquePaths3(int m, int n) {
-
-        int[][] arr = new int[m + 1][n + 1];
-        return count2(m, n, arr);
-    }
 
     public static int uniquePaths(int m, int n) {
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-        return count(m, n, map);
+        int[][] arr = new int[m + 1][n + 1];
+        return count(m, n, arr);
     }
 
 
     //top-down
-    public static int count2(int m, int n, int[][] arr) {
+    public static int count(int m, int n, int[][] arr) {
 
         int count = 0;
         if (arr[m][n] != 0) {
@@ -61,41 +55,19 @@ Note: m and n will be at most 100.
         } else if (m == 1 || n == 1) {
             count = 1;
         } else if (m > 1 && n > 1) {
-            count = count2(m - 1, n, arr) + count2(m, n - 1, arr);
+            count = count(m - 1, n, arr) + count(m, n - 1, arr);
         }
         arr[m][n] = count;
         return count;
     }
 
-    //top-down
-    public static int count(int m, int n, HashMap<String, Integer> map) {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 
-        int count = 0;
-        String key = m + "+" + n;     //112 - > 1,12/ 11,2
-
-        if (map.containsKey(key)) {
-            count = map.get(key);
-        } else if (m <= 1 && n <= 1) {
-            count = 0;
-        } else if (m == 1 || n == 1) {
-            count = 1;
-        } else if (m > 1 && n > 1) {
-            count = count(m - 1, n, map) + count(m, n - 1, map);
-        }
-        map.put(key, count);
-        return count;
-    }
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
 
 
-    public static int uniquePaths2(int m, int n) {
-        int[][] mat = new int[m + 1][n + 1];
-        mat[m - 1][n] = 1;
-        for (int r = m - 1; r >= 0; r--) {
-            for (int c = n - 1; c >= 0; c--) {
-                mat[r][c] = mat[r + 1][c] + mat[r][c + 1];
-            }
-        }
-        return mat[0][0];
+        return 1;
     }
 
 
