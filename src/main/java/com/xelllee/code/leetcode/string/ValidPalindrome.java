@@ -57,7 +57,8 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
             if (l != r) return false;
 
-            p--;q++;
+            p--;
+            q++;
 
         }
 

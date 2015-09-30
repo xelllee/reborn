@@ -6,7 +6,7 @@ public class SimpleTest2 {
     public static void main(String[] args) {
 
 //        int[] A = {1, 2, 5, 4, 3};
-        int[] A = {1, 3, 2,3, 4, 6};
+        int[] A = {1, 3, 2, 3, 4, 6};
 //        int[] A = {1, 5, 3, 3, 7};
 //        int[] A = {1, 2, 3, 3, 7};
 //        int[] A = {1};

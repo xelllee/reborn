@@ -31,7 +31,6 @@ public class ClimbingStairs {
     }
 
 
-
     //BEST !!
     public static int makeItRight3(int n) {
         if (n <= 2) return n;

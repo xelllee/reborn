@@ -27,7 +27,7 @@ public class ClimbingStairs {
     public static int count(int n, HashMap<Integer, Integer> map) {
 
 
-        if(n <= 0) return 0;
+        if (n <= 0) return 0;
 
         int count;
         if (map.containsKey(n))

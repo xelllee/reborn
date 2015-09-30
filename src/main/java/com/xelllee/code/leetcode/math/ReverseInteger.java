@@ -28,7 +28,7 @@ public class ReverseInteger {
         }
 
 
-        return (r * sign < Integer.MIN_VALUE || r * sign > Integer.MAX_VALUE) ? 0 : (int)(r * sign);
+        return (r * sign < Integer.MIN_VALUE || r * sign > Integer.MAX_VALUE) ? 0 : (int) (r * sign);
 
     }
 

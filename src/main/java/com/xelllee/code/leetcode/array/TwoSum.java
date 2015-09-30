@@ -18,7 +18,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        int[] arr = {3,2,4};
+        int[] arr = {3, 2, 4};
 
 
         System.out.println(twoSumHash(arr, 6));
@@ -33,7 +33,7 @@ public class TwoSum {
 
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int num, diff;
-        int[] res = new int [2];
+        int[] res = new int[2];
 
         for (int i = 0; i < arr.length; i++) {
             map.put(arr[i], i);
@@ -51,7 +51,7 @@ public class TwoSum {
 
         }
 
-           return "no way here";
+        return "no way here";
     }
 
     private static String twoSum(int[] arr, int target) {
