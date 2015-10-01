@@ -30,11 +30,7 @@ public class ValidateBinarySearchTree {
 
 
     public static boolean isBST(TreeNode n) {
-
-
         return inOrder(n);
-
-
     }
 
 
