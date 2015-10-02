@@ -2,7 +2,6 @@ package com.xelllee.code.leetcode.btree;
 
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Given a binary tree, find the maximum path sum.
@@ -29,14 +28,14 @@ import java.util.List;
 //TODO:
 public class BinaryTreeMaximumPathSum {
 
-
     public static void main(String[] args) {
+
         TreeNode n1 = new TreeNode(1);
         TreeNode n2 = new TreeNode(1);
         n1.left = n2;
 
 
-        int[] left = {-1, 2, -2, 4, -4, 2, 1};
+        int[] left = {2, 1, -3, 4, -1, 2, 1, -5, 4};
 
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
