@@ -1,4 +1,4 @@
-package com.xelllee.code.tellapart.boardgame1;
+package com.xelllee.code.tellapart.boardgame;
 
 /**
  * Created by xiao on 10/5/15.

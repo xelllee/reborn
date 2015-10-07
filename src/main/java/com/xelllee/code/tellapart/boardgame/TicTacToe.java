@@ -1,4 +1,4 @@
-package com.xelllee.code.tellapart.boardgame1;
+package com.xelllee.code.tellapart.boardgame;
 
 import java.io.BufferedReader;
 import java.io.IOException;

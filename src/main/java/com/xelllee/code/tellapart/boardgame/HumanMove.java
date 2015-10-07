@@ -1,4 +1,4 @@
-package com.xelllee.code.tellapart.boardgame1;
+package com.xelllee.code.tellapart.boardgame;
 
 // Strategy pattern.
 // The computer player's behavior/strategy can be replaced by inheriting from the interface below
@@ -26,23 +26,37 @@ package com.xelllee.code.tellapart.boardgame1;
 * Stakeholder: game developers (how is the extensibility of the Board Game Server in supporting new board games? how is the experience of plugging in a new game?)
 * */
 
-class SimpleMoveStrategy implements  MoveMethod {
-    private  TicTacToe game;
+class HumanMove implements MoveMethod {
+    private TicTacToe game;
 
-    public SimpleMoveStrategy( TicTacToe t) {
+    public HumanMove(TicTacToe t) {
         game = t;
     }
 
     public int move() {
 
-        for (int i = 0; i <  TicTacToe.N; i++) {
-            for (int j = 0; j <  TicTacToe.N; j++) {
-                if (game.board[i][j] == 0)
-                    return (i * 3 + j + 1);
+        String move_str;
+        int move_int = 0;
+        boolean valid_input = false;
+        while (!valid_input) {
+            System.out.print("Where to ? ");
+            move_str = TicTacToe.getUserInput();
+            if (Character.isDigit(move_str.toCharArray()[0])) {
+                move_int = Integer.parseInt(move_str);
+                if ((move_int <= (TicTacToe.N) * (TicTacToe.N)) && move_int >= 1) {
+                    valid_input = true;
+                    break;
+                }
+            }
+
+            if (!valid_input) {
+                System.out.println("Invalid input");
+                continue;
             }
         }
-        return 0;
+        return move_int;
     }
+
 }
 
 
