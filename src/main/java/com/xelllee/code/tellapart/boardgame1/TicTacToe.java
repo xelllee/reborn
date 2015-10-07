@@ -112,11 +112,11 @@ class TicTacToe {
         }
     }
 
-    private enum WinConfig {
+    public enum WinConfig {
         DRAW, WIN, NONE
     }
 
-    private WinConfig isWinningConfig() {
+    public WinConfig isWinningConfig() {
         WinConfig w = WinConfig.WIN;
         // rows
         for (int i = 0; i < N; i++) {
