@@ -1,11 +1,6 @@
 package com.xelllee.code.tellapart.boardgame;
 
-/**
- * Created by xiao on 10/5/15.
- */
 public class GameEngine {
-
-
 
     public static void main(String[] args) {
 
