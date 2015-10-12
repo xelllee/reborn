@@ -1,5 +1,7 @@
 package com.xelllee.code.leetcode.others;
 
+import java.util.*;
+
 /**
  * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
  * <p/>
@@ -16,8 +18,24 @@ package com.xelllee.code.leetcode.others;
  */
 public class WordLadder {
 
+    //recurisve search keep tracking changed postions set<int> pos
+
     public static void main(String[] args) {
 
+//        Stack<Integer> stack = new Stack<Integer>();
+//        stack.
+
+        Queue queue = new LinkedList();
+
+//        queue.
     }
 
+
+    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+
+
+        return 1;
+    }
 }
+
+
