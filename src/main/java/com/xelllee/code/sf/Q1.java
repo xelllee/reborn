@@ -1,4 +1,4 @@
-package com.xelllee.code.salesforce;
+package com.xelllee.code.sf;
 
 import java.util.Arrays;
 

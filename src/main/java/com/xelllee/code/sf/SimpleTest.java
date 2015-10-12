@@ -1,4 +1,4 @@
-package com.xelllee.code.salesforce;
+package com.xelllee.code.sf;
 
 /**
  * Given a array of integer and group size, reverse array by group size, example as follows:

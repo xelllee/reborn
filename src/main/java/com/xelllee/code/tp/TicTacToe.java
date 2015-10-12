@@ -1,4 +1,4 @@
-package com.xelllee.code.tellapart;
+package com.xelllee.code.tp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
